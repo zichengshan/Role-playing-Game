@@ -35,6 +35,16 @@ function renderCharacter(object) {
     `
 }
 
+function getDiceRollArray(diceCount) {
+    let randomNumbers = []
+    for(let i = 0; i < diceCount; i++){
+        randomNumbers.push(Math.floor(Math.random()*6)+1)
+    }
+    return randomNumbers
+}
+
+console.log(getDiceRollArray(2))
+
 renderCharacter(heroObject)
 renderCharacter(monsterObject)
 
