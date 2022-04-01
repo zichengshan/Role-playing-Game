@@ -1,6 +1,5 @@
 const characterData = {
     heroObject: {
-        elementId: "hero",
         name: "Wizard",
         avatar: "images/wizard.png",
         health: "60",
@@ -8,7 +7,6 @@ const characterData = {
     },
 
     monsterObject: {
-        elementId: "monster",
         name: "Orc",
         avatar: "images/orc.png",
         health: "10",
