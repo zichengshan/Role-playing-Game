@@ -32,11 +32,13 @@ function renderCharacter(object) {
 }
 
 function getDiceRollArray(diceCount) {
-    let randomNumbers = []
-    for(let i = 0; i < diceCount; i++){
-        randomNumbers.push(Math.floor(Math.random()*6)+1)
-    }
-    return randomNumbers
+    return new Array(diceCount).fill(0).map(function (){
+        return Math.floor(Math.random()*6)+1
+    })
+    // for(let i = 0; i < diceCount; i++){
+    //     randomNumbers.push(Math.floor(Math.random()*6)+1)
+    // }
+    // return randomNumbers
 }
 
 function getDiceHtml(diceCount) {
