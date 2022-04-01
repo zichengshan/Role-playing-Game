@@ -16,12 +16,13 @@ const monsterObject = {
 }
 
 function renderCharacter(object) {
-    document.getElementById(object.elementId).innerHTML = `
+    const {elementId, name, avatar, health, diceRoll} = object
+    document.getElementById(elementId).innerHTML = `
         <div class="character-card">
-            <h4 class="name"> ${object.name} </h4>
-            <img class="avatar" src="${object.avatar}"/>
-            <p class="health">health: <b> ${object.health} </b></p>
-            <div class="dice-container"><div class="dice"> ${object.diceRoll} </div></div>
+            <h4 class="name"> ${name} </h4>
+            <img class="avatar" src="${avatar}"/>
+            <p class="health">health: <b> ${health} </b></p>
+            <div class="dice-container"><div class="dice"> ${diceRoll} </div></div>
         </div>
     `
 }
