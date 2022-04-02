@@ -13,14 +13,21 @@ function attack() {
     monster.getDiceHtml()
     wizard.takeDamage(monster.currentDiceScore)
     monster.takeDamage(wizard.currentDiceScore)
-    if(wizard.dead || monster.dead){
+
+    if(wizard.dead){
         endGame()
+    }else if(monster.dead){
+        if(monstersArray.length > 0){
+            monster = getNewMonster()
+        }else{
+            endGame()
+        }
     }
     render()
 }
 
 function endGame() {
-    const endMessage = wizard.health === 0 && monster.health === 0 ?
+    const endMessage = wizard.health === 0 && (monster.health === 0 && monstersArray.length == 0) ?
         "No victors - all creatures are dead" :
         wizard.health > 0 ? "The Wizard Wins" :
         "The Orc is Victorious"
