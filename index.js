@@ -11,6 +11,8 @@ const orc = new Character(characterData.monsterObject)
 render()
 
 function attack() {
+    wizard.getDiceHtml()
+    orc.getDiceHtml()
     render()
 }
 
