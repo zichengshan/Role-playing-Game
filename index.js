@@ -9,3 +9,9 @@ function render() {
 const wizard = new Character(characterData.heroObject)
 const orc = new Character(characterData.monsterObject)
 render()
+
+function attack() {
+    render()
+}
+
+document.getElementById("attack-button").addEventListener("click", attack)
