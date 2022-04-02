@@ -26,6 +26,15 @@ function endGame() {
         "No victors - all creatures are dead" :
         wizard.health > 0 ? "The Wizard Wins" :
         "The Orc is Victorious"
+
+    const endEmoji = endMessage === "The Wizard Wins" ? "🔮" : "☠️"
+    document.body.innerHTML = `
+    <div class="end-game">
+        <h2>Game Over</h2>
+        <h3>${endMessage}</h3>
+        <p class="end-emoji">${endEmoji}</p>
+    </div>`
+
 }
 
 document.getElementById("attack-button").addEventListener("click", attack)
