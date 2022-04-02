@@ -33,8 +33,8 @@ function Character(data) {
         this.health -= totalAttackScore
         if(this.health <= 0){
             this.health = 0
+            this.dead = true
         }
-
     }
 }
 
