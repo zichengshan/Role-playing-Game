@@ -1,8 +1,5 @@
-import {getDiceRollArray, getDicePlaceholderHtml} from "./utils.js";
+import {getDiceRollArray, getDicePlaceholderHtml, getPercentage} from "./utils.js";
 
-const getPercentage = (remainingHealth, maximumHealth) => 100 * remainingHealth / maximumHealth
-
-const percent = getPercentage()
 function Character(data) {
     Object.assign(this, data)
     this.diceArray = getDicePlaceholderHtml(this.diceCount)
@@ -41,8 +38,6 @@ function Character(data) {
 
     this.getHealthBarHtml = function (){
         const percent = getPercentage(this.health, this.maxHealth)
-        // alert(this.name + percent)
-        // const danger = percent <= 25 ? "danger" : ""
         return `
             <div class="health-bar-outer">
                 <div class="health-bar-inner ${percent <= 25 ? "danger" : ""} " 
