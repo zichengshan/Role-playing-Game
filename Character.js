@@ -3,6 +3,7 @@ import {getDiceRollArray, getDicePlaceholderHtml} from "./utils.js";
 function Character(data) {
     Object.assign(this, data)
     this.diceArray = getDicePlaceholderHtml(this.diceCount)
+    this.maxHealth = data.health
 
     this.getCharacterHtml = function () {
         const {elementId, name, avatar, health, diceCount, diceArray} = this;
@@ -16,7 +17,8 @@ function Character(data) {
                 </div>
             </div>
     `
-
+    }
+    
     // save data in diceArray
     this.getDiceHtml = function () {
         this.currentDiceScore = getDiceRollArray(this.diceCount)
