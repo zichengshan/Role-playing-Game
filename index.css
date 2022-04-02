@@ -185,6 +185,11 @@ button {
     box-shadow: 0px 6px 10px -4px rgba(0,0,0,0.4);
 }
 
+button:active {
+    box-shadow: 0 2px #666;
+    transform: translateY(6px);
+}
+
 @media(min-width:550px){
     button {
         margin-top: 0;
