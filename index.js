@@ -10,25 +10,25 @@ function getNewMonster() {
 }
 
 function attack() {
-    if(canClickAttack){
+    if (canClickAttack) {
         wizard.setDiceHtml()
         monster.setDiceHtml()
         wizard.takeDamage(monster.currentDiceScore)
         monster.takeDamage(wizard.currentDiceScore)
         render()
 
-        if(wizard.dead){
+        if (wizard.dead) {
             canClickAttack = false
             endGame()
-        }else if(monster.dead){
+        } else if (monster.dead) {
             canClickAttack = false
-            if(monstersArray.length > 0){
+            if (monstersArray.length > 0) {
                 setTimeout(() => {
                     monster = getNewMonster()
                     render()
                     canClickAttack = true
                 }, 1000)
-            }else{
+            } else {
                 endGame()
             }
         }
@@ -37,10 +37,10 @@ function attack() {
 
 function endGame() {
     // canClickAttack = false
-    const endMessage = wizard.health === 0 && monster.health === 0  ?
+    const endMessage = wizard.health === 0 && monster.health === 0 ?
         "No victors - all creatures are dead" :
         wizard.health > 0 ? "The Wizard Wins" :
-        "The Orc is Victorious"
+            "The Orc is Victorious"
 
     const endEmoji = endMessage === "The Wizard Wins" ? "🔮" : "☠️"
     setTimeout(() => {
