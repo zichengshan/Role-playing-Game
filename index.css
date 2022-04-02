@@ -32,9 +32,15 @@ header {
 }
 
 header h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     color: darkred;
     font-weight: bolder;
+}
+
+@media(min-width:550px){
+    header h1 {
+        font-size: 3rem;
+    }
 }
 
 .character-card {
