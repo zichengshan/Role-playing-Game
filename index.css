@@ -20,11 +20,21 @@ main {
 @media(min-width:550px){
     main {
         flex-direction: row;
-        margin:6vh 5vw;
+        margin:4vh 5vw;
         justify-content: center;
         width:86vw;
-        gap: 2rem;
+        gap: 4rem;
     }
+}
+
+header {
+    margin-top: 2em;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: darkred;
+    font-weight: bolder;
 }
 
 .character-card {

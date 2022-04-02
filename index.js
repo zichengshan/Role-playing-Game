@@ -50,7 +50,7 @@ function endGame() {
             <h3>${endMessage}</h3>
             <p class="end-emoji">${endEmoji}</p>
         </div>`
-    }, 1500)
+    }, 500)
 
 }
 
