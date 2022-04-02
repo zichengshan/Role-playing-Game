@@ -16,20 +16,15 @@ function Character(data) {
                 </div>
             </div>
     `
-    }
 
     // save data in diceArray
     this.getDiceHtml = function () {
         this.currentDiceScore = getDiceRollArray(this.diceCount)
-        this.diceArray = this.currentDiceScore.map(function (num){
-            return `<div class="dice">${num}</div>`
-        }).join('')
+        this.diceArray = this.currentDiceScore.map(num => `<div class="dice">${num}</div>`).join('')
     }
 
     this.takeDamage = function (attackScoreArray){
-        const totalAttackScore = attackScoreArray.reduce(function (total, currentAttack){
-            return total + currentAttack
-        })
+        const totalAttackScore = attackScoreArray.reduce((total, currentAttack) => total + currentAttack)
         this.health -= totalAttackScore
         if(this.health <= 0){
             this.health = 0
